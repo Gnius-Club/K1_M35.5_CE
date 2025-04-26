@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 35.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+         .activity.active .banner {
+             background-color: #AED6F1; /* Slightly different color when active */
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 35.5: ¡La Melodía Secreta del Bosque Cantor!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Set LEGO Coding Express (tren, vías rectas, vías curvas, ladrillos de acción rojo, azul, amarillo) y 10 iBricks (para decorar el "bosque") por cada pareja.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Escucha la Música Secreta! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Introducir el concepto de patrones en la música y la idea de completar una melodía.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda al CODE SQUAD y pregunta si les gusta la música y si han notado que las canciones repiten partes.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, músicos del CODE SQUAD! ¿Les gusta escuchar canciones? ¿Han notado que a veces una parte de la canción se repite una y otra vez? ¡Como un eco musical! ¡Eso se llama patrón! ¡Hoy vamos a ser detectives de patrones musicales!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que para descubrir patrones musicales (o de cualquier tipo), hay que escuchar/observar atentamente y predecir qué sigue.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Para descubrir el patrón secreto de una canción o de un código, necesitamos oídos y ojos de súper detective! ¡Hay que fijarse bien en lo que se repite y adivinar qué viene después! ¡Vamos al Gimnasio Cerebral a entrenar nuestra habilidad para encontrar y completar patrones!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar la identificación de secuencias repetitivas en movimientos.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, haciendo énfasis en alguna secuencia que se repita (ej. A-B-B o A-B-C-B).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Este baile tiene un ritmo secreto! ¡Fíjense bien si hay pasos que se repiten de forma especial! ¿Quizás hacemos A-B-B? ¿O A-B-C-B? ¡Encuentren el patrón mientras bailamos! ¡Así calentamos para encontrar la melodía secreta del bosque!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - La Melodía Incompleta -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🌲 Actividad 3: ¡El Misterio del Bosque Cantor! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la historia del bosque, los animales músicos (representados por ladrillos de acción) y el reto de completar su melodía/patrón.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Narra la historia del Bosque Cantor donde los animales crean música juntos.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡CODE SQUAD! ¡Hemos sido llamados al mágico Bosque Cantor! En este bosque, ¡los animales no solo hablan, sino que hacen música juntos! ¡La Rana René toca el tambor (ROJO), el Pájaro Pipo canta una nota aguda (AZUL), y el Grillo Goyo frota sus patitas (AMARILLO)! ¡Crean melodías maravillosas!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el reto: estaban creando una nueva melodía (un patrón de sonidos/acciones con ladrillos), pero se detuvieron y olvidaron cómo seguía. Hay que identificar el patrón y añadir los ladrillos/sonidos que faltan.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Pero hoy pasó algo triste! Estaban creando una nueva melodía súper especial, ¡un patrón secreto de sonidos! Pero de repente, ¡se distrajeron con una mariposa brillante y olvidaron cómo continuaba la canción! ¡Dejaron la melodía a medias! ¡Miren! (Señala la idea del patrón incompleto). Nuestro reto, detectives musicales, es: ¡escuchar (ver) la parte de la melodía (el patrón de ladrillos) que sí hicieron, descubrir la regla secreta de cómo se repiten los sonidos, y añadir los ladrillos que faltan para completar la canción del bosque!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Dúos de Detectives Musicales! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para analizar el patrón musical y completarlo.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que descifrar patrones musicales requiere escuchar/observar atentamente y trabajar en equipo. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Descifrar una melodía secreta necesita de oídos (y ojos) muy atentos! ¡Y dos Detectives Musicales trabajando juntos pueden encontrar el patrón más rápido! ¡Uno puede mirar los colores, el otro puede pensar en el orden! ¡Formen sus Dúos de Detectives Musicales!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a preparar su "escenario del bosque" con iBricks y tener listos los ladrillos de acción (los animales músicos).</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Detectives? ¡Preparen su escenario del Bosque Cantor! Pueden usar los bloques gigantes para hacer árboles o rocas. ¡Tengan a mano a nuestros músicos: Rana René (Rojo), Pájaro Pipo (Azul) y Grillo Goyo (Amarillo)! ¡La música está por comenzar... o continuar!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Encuentra y Completa la Melodía! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">🎶 Actividad 5: ¡Reconstruyendo la Canción del Bosque! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Observar el patrón de ladrillos incompleto presentado, identificar la regla de repetición y colocar los ladrillos faltantes para completar la secuencia.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+             <!-- Paso 1: Presentar el Patrón Incompleto -->
+             <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡La Melodía a Medias!". Construye (o muestra construido) el inicio de la vía con el patrón incompleto según el nivel. Pide que observen atentamente los colores y el orden.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Detectives! ¡Aquí está la melodía que dejaron los animales! Miren con atención los ladrillos que SÍ están en la vía. ¿Qué colores ven? ¿En qué orden están? ¡Fíjense bien, porque aquí está la pista para saber cómo sigue la canción!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Paso 2: Identificar y Completar (Específico por Nivel) -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Patrón K1: Rojo-Azul-Azul...¿?". Patrón en vía: Rojo - Azul - Azul - [ESPACIO]. Pregunta: "¿Qué patrón ven? (A-BB). Si sigue A-BB, ¿qué color falta aquí?". Guía para colocar 1 ladrillo ROJO.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! Miren: Rojo (Rana), Azul (Pájaro), Azul (Pájaro)... ¡A-BB! ¿Qué viene después de A-BB? ¡Se repite el patrón! ¿Cuál es el primero del patrón A-BB? (Espera respuesta: ¡Rojo/Rana!). ¡Exacto! Falta la Rana René. ¡Tomen el ladrillo ROJO y pónganlo en el espacio vacío para completar la melodía!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 2 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Patrón K2: Rojo-Azul-Azul-Rojo...¿?¿?". Patrón en vía con curva: Rojo - Azul - Azul - Rojo - [ESPACIO] - [ESPACIO]. Pregunta: "El patrón es A-BB (Rojo-Azul-Azul). Ya empezó de nuevo con Rojo (A). ¿Qué viene después?". Guía para colocar 2 ladrillos: AZUL y AZUL.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Detectives K2! Su melodía es A-BB: Rojo-Azul-Azul. ¡Y ya empezó a repetirse con el Rojo! Así que tenemos: Rojo - Azul - Azul - Rojo... ¿Qué sigue después de la A (Rojo) en el patrón A-BB? (Espera respuesta: ¡BB! ¡Azul y Azul!). ¡Correcto! Faltan dos Pájaros Pipo. ¡Tomen DOS ladrillos AZULES y pónganlos en los espacios vacíos, uno después del otro!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Patrón K3: Rojo-Azul-Amarillo-Azul-Rojo...¿?¿?¿?". Patrón en vía con curva: Rojo - Azul - Amarillo - Azul - Rojo - [ESPACIO] - [ESPACIO] - [ESPACIO]. Pregunta: "Patrón complejo: A-B-C-B (Rojo-Azul-Amarillo-Azul). Ya empezó de nuevo con Rojo (A). ¿Qué sigue?". Guía para colocar 3 ladrillos: AZUL, AMARILLO, AZUL.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros K3! ¡Esta melodía es un desafío! El patrón es A-B-C-B: Rojo(A)-Azul(B)-Amarillo(C)-Azul(B). Y ya empezó a repetirse con Rojo(A). Así que tenemos: Rojo - Azul - Amarillo - Azul - Rojo... ¿Qué sigue después de la A (Rojo) en el patrón A-B-C-B? (Espera respuesta: ¡B-C-B! ¡Azul, Amarillo, Azul!). ¡Exacto! Faltan el Pájaro, el Grillo y otro Pájaro. ¡Tomen los ladrillos AZUL, AMARILLO y AZUL y colóquenlos en orden en los espacios vacíos!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡Escuchando la Melodía Completa! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-melodia')">
+        <div class="title">🎵 Actividad 6: ¡El Concierto del Bosque! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar el tren sobre la vía completa y escuchar/observar si la secuencia de acciones (la melodía) sigue el patrón identificado y completado.</div>
+    </div>
+    <div id="probando-melodia" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Melodía K1 Completa!". Guía para probar el tren en la vía (Rojo-Azul-Azul-Rojo). Observar si realiza la secuencia de acciones A-B-B-A. Celebrar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡La melodía está completa! ¡Pongan al Coding Express al inicio del camino musical! ¡Empujón! Escuchen y miren: ¿Acción A (Roja)? ¿Acción B (Azul)? ¿Acción B otra vez (Azul)? ¿Y Acción A de nuevo (Roja)? ¡Sí! ¡Rana-Pájaro-Pájaro-Rana! ¡Completaron la canción!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Melodía K2 Reparada!". Guía para probar el tren (Rojo-Azul-Azul-Rojo-Azul-Azul). Observar si realiza la secuencia A-BB-A-BB. Comentar cómo se repite el patrón A-BB.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Detectives K2! ¡A probar la melodía reparada! ¡Tren al inicio! ¡Empujón! Veamos si sigue el patrón A-BB dos veces: ¿A(Rojo)-B(Azul)-B(Azul)... y otra vez... A(Rojo)-B(Azul)-B(Azul)? ¡Sí! ¡Rana-Pájaro-Pájaro y Rana-Pájaro-Pájaro! ¡El patrón se repite perfectamente! ¡Buen trabajo!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Melodía K3 Descifrada!". Guía para probar el tren (Rojo-Azul-Amarillo-Azul-Rojo-Azul-Amarillo-Azul). Observar si realiza la secuencia A-B-C-B repetida. Felicitar por completar el patrón complejo.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros K3! ¡El gran concierto! ¡Tren al inicio! ¡Empujón! ¿Seguirá el patrón A-B-C-B dos veces? Veamos: ¿A(Rojo)-B(Azul)-C(Amarillo)-B(Azul)... y de nuevo... A(Rojo)-B(Azul)-C(Amarillo)-B(Azul)? ¡SÍ! ¡Rana-Pájaro-Grillo-Pájaro y Rana-Pájaro-Grillo-Pájaro! ¡Descifraron y completaron la melodía más secreta del bosque! ¡Son geniales!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 OMITIDA -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Detectives de Patrones Exitosos! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar el éxito en completar patrones complejos, reforzar la habilidad de identificar reglas de repetición y predecir la continuación de una secuencia.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Reúne al grupo, felicita por completar la melodía. Realiza preguntas sobre cómo descubrieron el patrón.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡MISIÓN CUMPLIDA, súper detectives musicales del CODE SQUAD! ¡Han ayudado a los animales del Bosque Cantor a completar su melodía secreta! ¡Gracias a ustedes, la música vuelve a sonar completa y hermosa! Pensemos en cómo resolvimos este misterio:
+1. ¿Qué fue lo primero que hicimos al ver la melodía incompleta? (¡Observar los colores/ladrillos que SÍ estaban!)
+2. ¿Cómo supimos qué ladrillo(s) faltaba(n)? (¡Descubrimos la regla! ¡Vimos cómo se repetían los colores/sonidos!)
+3. ¿Los patrones que encontramos hoy eran más simples (como A-B) o un poco más complejos (como A-BB o A-B-C-B)? (¡Más complejos!)
+¡Hoy practicamos ser detectives de patrones más difíciles! Aprendimos que si observamos con mucha atención, podemos descubrir reglas complicadas y saber qué viene después, ¡incluso si faltan varias piezas! ¡Son expertos encontrando patrones secretos! ¡Hasta la próxima misión!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity'); // Encuentra el contenedor de la actividad
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Remueve clase activa si se cierra
+        } else {
+             // Opcional: Cierra otros contenidos abiertos antes de abrir uno nuevo
+             // closeAllContents();
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Añade clase activa si se abre
+        }
+    }
+
+    // Función opcional para cerrar todos los demás contenidos al abrir uno
+    /*
+    function closeAllContents() {
+        var allContents = document.querySelectorAll('.content');
+        var allActivities = document.querySelectorAll('.activity');
+        allContents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+         allActivities.forEach(function(activity) {
+             activity.classList.remove('active');
+         });
+    }
+    */
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        // Actualiza el texto del título H2
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Oculta todas las filas de contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Muestra solo las filas del nivel seleccionado
+        // Usamos 'table-row' porque estamos mostrando/ocultando filas de tabla (<tr>)
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             // Importante: Necesitamos asegurarnos de que el display sea correcto para filas de tabla
+             if (el.tagName === 'TR') {
+                 el.style.display = 'table-row';
+             } else {
+                 // Si por alguna razón hay otros elementos, usar 'block' o ajustar según sea necesario
+                 el.style.display = 'block';
+             }
+        });
+    }
+
+    // Asegura que updateContent se ejecute cuando la página cargue
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
